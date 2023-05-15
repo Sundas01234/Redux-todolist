@@ -10,8 +10,7 @@ const Addtodo = () => {
 	const onSubmit = (event) => {
 		event.preventDefault();
 
-		if(value.trim().length === 0)
-		{
+		if (value.trim().length === 0) {
 			alert("Enter a task before adding !!");
 			setValue("");
 			return;
@@ -27,19 +26,20 @@ const Addtodo = () => {
 	};
 
 	return (
-		<div className="add-todo">
-			<input
-				type="text"
-				className="task-input"
-				placeholder="Add task"
-				value={value}
-				onChange={(event) => setValue(event.target.value)}
-			></input>
-
-			<button className="task-button" onClick={onSubmit}>
-				Save
-			</button>
-		</div>
+		<div class=" flex flex-col justify-center items-center">
+		<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+		  <div class="mb-4">
+			<label class="block text-gray-700 text-sm font-bold mb-2" for="add list">
+			  Add List
+			</label>
+			<input type="text" className="input" value={value} onChange={(event) => setValue(event.target.value)} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+		  </div>
+		  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="add" onClick={onSubmit}>
+			Add
+		  </button>
+		</form>
+  
+	  </div>
 	);
 };
 
